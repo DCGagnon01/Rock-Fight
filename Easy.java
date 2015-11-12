@@ -8,11 +8,6 @@ import greenfoot.*;
  */
 public class Easy extends BackDrop
 {
-
-    /**
-     * Constructor for objects of class Easy.
-     * 
-     */
     public Easy()
     {
         removeMainMenu();

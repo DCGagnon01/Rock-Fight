@@ -20,16 +20,12 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
-
-    boolean firstRun = true;
-    /**
-     * Constructor for objects of class BackDrop.
-     * 
-     */
+    
     public BackDrop()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1080, 538, 1); 
+        
         addMainMenu();
     }
 
@@ -46,6 +42,7 @@ public class BackDrop extends World
         removeObject(startButton);
         removeObject(soundButton);
         removeObject(scoresButton);
+        removeObject(exitButton);
     }
 
     public void addDifficultySelect()

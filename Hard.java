@@ -8,11 +8,6 @@ import greenfoot.*;
  */
 public class Hard extends BackDrop
 {
-
-    /**
-     * Constructor for objects of class Hard.
-     * 
-     */
     public Hard()
     {
         removeMainMenu();
