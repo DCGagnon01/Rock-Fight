@@ -8,9 +8,9 @@ import greenfoot.*;
  */
 public class BackDrop extends World
 {
-    int easy = 3000;
-    int normal = 1000;
-    int hard = 500;
+    final int EASY = 300;
+    final int NORMAL = 250;
+    final int HARD = 200;
     
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
