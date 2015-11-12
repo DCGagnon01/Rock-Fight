@@ -8,8 +8,21 @@ import greenfoot.*;
  */
 public class Hard extends BackDrop
 {
+    int counter = HARD;
     public Hard()
     {
         removeMainMenu();
+    }
+    
+    public void act()
+    {
+        if(counter == HARD)
+        {
+            counter = 0;
+        }
+        else
+        {
+            counter++;
+        }
     }
 }
