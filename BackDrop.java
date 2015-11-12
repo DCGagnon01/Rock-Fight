@@ -11,6 +11,7 @@ public class BackDrop extends World
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
     HighScore scoresButton = new HighScore();
+    Exit exitButton = new Exit();
 
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
@@ -30,9 +31,10 @@ public class BackDrop extends World
 
     public void addMainMenu()
     {
-        addObject(startButton, getWidth()/2, (getHeight()/2)+50);
+        addObject(startButton, getWidth()/2, getHeight()/2);
         addObject(soundButton, startButton.getX(), startButton.getY()+76);
         addObject(scoresButton, soundButton.getX(), soundButton.getY()+76);
+        addObject(exitButton, scoresButton.getX(), scoresButton.getY()+76);
     }
 
     public void removeMainMenu()
