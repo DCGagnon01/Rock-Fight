@@ -1,6 +1,7 @@
 *.class
 *.ctxt
 project.greenfoot
+*.txt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
