@@ -57,11 +57,11 @@ public class BackDrop extends World
         addObject(hardButton, getWidth()/2, (getHeight()/4)*3);
     }
 
-    public void recordScore(String name, int score) throws IOException
+    public void recordScore(String name) throws IOException
     {
         File folder = new File("C:\\Rock-Fight");
         folder.mkdir();
-        
+
         File file = new File("C:\\Rock-Fight\\highScores.txt");
         FileWriter fw = new FileWriter(file, true);
         PrintWriter output = new PrintWriter(fw);
@@ -70,12 +70,6 @@ public class BackDrop extends World
         fw.close();
     }
 }
-
-
-
-
-
-
 
 
 
