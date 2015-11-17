@@ -1,20 +1,22 @@
-import greenfoot.*;
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Normal here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Normal extends BackDrop
 {
-
-    /**
-     * Constructor for objects of class Normal.
-     * 
-     */
+    int counter = NORMAL;
     public Normal()
     {
         removeMainMenu();
+    }
+
+    public void act()
+    {
+        if(counter == NORMAL)
+        {
+            counter = 0;
+        }
+        else
+        {
+            counter++;
+        }
     }
 }
