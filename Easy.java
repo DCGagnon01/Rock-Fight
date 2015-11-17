@@ -8,13 +8,27 @@ import greenfoot.*;
  */
 public class Easy extends BackDrop
 {
-
-    /**
-     * Constructor for objects of class Easy.
-     * 
-     */
+    int counter = EASY;
     public Easy()
     {
         removeMainMenu();
+    }
+
+    public void act()
+    {
+        if(counter == EASY)
+        {
+            spawnEnemy();
+            counter = 0;
+        }
+        else
+        {
+            counter++;
+        }
+    }
+
+    public void spawnEnemy()
+    {
+
     }
 }
