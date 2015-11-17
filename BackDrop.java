@@ -8,9 +8,9 @@ import greenfoot.*;
  */
 public class BackDrop extends World
 {
-    int easy = 3000;
-    int normal = 1000;
-    int hard = 500;
+    final int EASY = 300;
+    final int NORMAL = 250;
+    final int HARD = 200;
     
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -20,16 +20,12 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
-
-    boolean firstRun = true;
-    /**
-     * Constructor for objects of class BackDrop.
-     * 
-     */
+    
     public BackDrop()
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1080, 538, 1); 
+        
         addMainMenu();
     }
 
@@ -46,6 +42,7 @@ public class BackDrop extends World
         removeObject(startButton);
         removeObject(soundButton);
         removeObject(scoresButton);
+        removeObject(exitButton);
     }
 
     public void addDifficultySelect()

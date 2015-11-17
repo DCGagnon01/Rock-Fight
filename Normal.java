@@ -2,17 +2,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 public class Normal extends BackDrop
 {
+    int counter = NORMAL;
+    public Normal()
+    {
+        removeMainMenu();
+    }
+
     public void act()
     {
-
-        if(normal = 1000)
+        if(counter == NORMAL)
         {
-            
+            counter = 0;
         }
         else
         {
-            normal++;
+            counter++;
         }
     }
-
 }
