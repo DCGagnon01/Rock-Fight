@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+=======
+import greenfoot.*;
+>>>>>>> 47e06cc93c0f3b40af343cb3ed47a6d1759a0f6d
 
 /**
  * Write a description of class Easy here.
@@ -6,6 +10,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+<<<<<<< HEAD
 public class Easy extends World
 {
 
@@ -58,3 +63,25 @@ public void tick(){
 
 }
 }
+=======
+public class Easy extends BackDrop
+{
+    int counter = EASY;
+    public Easy()
+    {
+        removeMainMenu();
+    }
+    
+    public void act()
+    {
+        if(counter == EASY)
+        {
+            counter = 0;
+        }
+        else
+        {
+            counter++;
+        }
+    }
+}
+>>>>>>> 47e06cc93c0f3b40af343cb3ed47a6d1759a0f6d
