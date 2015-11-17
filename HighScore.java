@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+import java.text.*;
 import greenfoot.*;
 
 /**
@@ -12,11 +15,31 @@ public class HighScore extends MainMenu
      * Act - do whatever the HighScore wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
         if(Greenfoot.mouseClicked(this))
         {
-            System.out.println("High Score");
+            try
+            {
+                showScores();
+            }
+            catch(IOException e)
+            {
+                System.out.println("invalid");
+            }
         }
     }    
+
+    public void showScores() throws IOException
+    {
+        try
+        {
+            BackDrop world = (BackDrop)getWorld();
+            world.recordScore("Test");
+        }
+        catch(IOException e)
+        {
+
+        }
+    }
 }

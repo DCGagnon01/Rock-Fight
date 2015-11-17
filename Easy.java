@@ -13,16 +13,22 @@ public class Easy extends BackDrop
     {
         removeMainMenu();
     }
-    
+
     public void act()
     {
         if(counter == EASY)
         {
+            spawnEnemy();
             counter = 0;
         }
         else
         {
             counter++;
         }
+    }
+
+    public void spawnEnemy()
+    {
+
     }
 }
