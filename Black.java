@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Black extends Stick_Figure
 {
-    int time = 10;
+    final int TIMEMAX = 4;
+    int time = TIMEMAX;
     int frame = 0;
     /**
      * Act - do whatever the Black wants to do. This method is called whenever
@@ -17,22 +18,39 @@ public class Black extends Stick_Figure
     public void act() 
     {
         animation();
+        move();
+        checkDespawn();
+    }
+    
+    public void checkDespawn()
+    {
+        BackDrop world = (BackDrop)getWorld();
+        world.despawnEnemy(this);
+    }
+    
+    public void move()
+    {
+        setLocation(getX()+2, getY());
     }
 
     public void animation()
     {
-        if (time == 10)
+        if (time == TIMEMAX)
         {
             frame ++;
             if (frame < 8)
             {
-                setImage("Run" + frame);
-                time = 0;
+                setImage("Run" + frame + ".png");
             }
             else
             {
-                time ++;   
+                frame = 0;
             }
+            time = 0;
+        }
+        else
+        {
+            time ++;   
         }
     }
 }
