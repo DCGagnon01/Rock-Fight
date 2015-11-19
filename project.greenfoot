@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Nov 19 10:40:39 EST 2015
+#Thu Nov 19 10:48:37 EST 2015
 target16.name=Exit
 class.Black.superclass=Stick_Figure
 target2.name=NormalButton
@@ -211,6 +211,7 @@ target3.height=50
 dependency6.to=Sound
 target4.name=BackDrop
 target1.y=250
+class.Blue.image=Blue1.png
 target1.x=200
 target5.typeParameters=
 dependency13.type=UsesDependency
@@ -244,7 +245,7 @@ dependency7.from=Menu
 target6.width=80
 readme.width=47
 target6.editor.y=20
-mainWindow.height=1056
+mainWindow.height=744
 target9.naviview.expanded=true
 target6.editor.x=40
 target14.showInterface=false
@@ -267,6 +268,7 @@ dependency19.type=UsesDependency
 dependency16.from=HardButton
 target13.showInterface=false
 target4.showInterface=false
+class.Blue.superclass=Stick_Figure
 class.NormalButton.image=Normal.png
 target15.type=ClassTarget
 target11.height=50
@@ -297,4 +299,4 @@ world.lastInstantiated=BackDrop
 dependency14.to=BackDrop
 target1.height=50
 target4.typeParameters=
-mainWindow.width=1936
+mainWindow.width=1382

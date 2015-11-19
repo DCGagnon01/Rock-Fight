@@ -23,7 +23,7 @@ public class Blue extends Stick_Figure
     public void checkDespawn()
     {
         BackDrop world = (BackDrop)getWorld();
-        world.despawnEnemy(this);
+        world.despawnStickFigure(this);
     }
     
     public void move()
