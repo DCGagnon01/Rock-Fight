@@ -13,10 +13,18 @@ public class Blue extends Stick_Figure
     boolean isLeft;
     public Blue(int direction)
     {
+        GreenfootImage img = new GreenfootImage("Blue1.png");
         if(direction < 0)
+        {
             isLeft = true;
+            img.mirrorHorizontally();
+            setImage(img);
+        }
         else
+        {
             isLeft = false;
+            setImage(img);
+        }
     }
 
     public void act() 
