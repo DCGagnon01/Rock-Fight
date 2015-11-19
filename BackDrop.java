@@ -33,12 +33,16 @@ public class BackDrop extends World
 
         addMainMenu();
     }
-    
+
     public void spawnEnemy()
     {
-        addObject(new Black(), 0, getHeight()/2);
+        int random = -1;
+        if(random >= 0)
+            addObject(new Black(1), 0, getHeight()/2);
+        else
+            addObject(new Black(-1), getWidth(), getHeight()/2);
     }
-    
+
     public void despawnStickFigure(Stick_Figure figure)
     {
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
@@ -83,9 +87,6 @@ public class BackDrop extends World
         fw.close();
     }
 }
-
-
-
 
 
 
