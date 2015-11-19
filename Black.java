@@ -1,5 +1,4 @@
-import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
-
+import greenfoot.*; 
 /**
  * Write a description of class Black here.
  * 
@@ -11,10 +10,15 @@ public class Black extends Stick_Figure
     final int TIMEMAX = 4;
     int time = TIMEMAX;
     int frame = 0;
-    /**
-     * Act - do whatever the Black wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    boolean isLeft;
+    public Black(int direction)
+    {
+        if(direction < 0)
+            isLeft = true;
+        else
+            isLeft = false;
+    }
+    
     public void act() 
     {
         animation();
@@ -30,7 +34,10 @@ public class Black extends Stick_Figure
     
     public void move()
     {
-        setLocation(getX()+2, getY());
+        if(!isLeft)
+            setLocation(getX()+2, getY());
+        else
+            setLocation(getX()-2, getY());
     }
 
     public void animation()
@@ -41,6 +48,12 @@ public class Black extends Stick_Figure
             if (frame < 8)
             {
                 setImage("Run" + frame + ".png");
+                if(isLeft)
+                {
+                    GreenfootImage img = getImage();
+                    img.mirrorHorizontally();
+                    setImage(img);
+                }
             }
             else
             {
