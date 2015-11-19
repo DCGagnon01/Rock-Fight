@@ -13,25 +13,33 @@ public class Black extends Stick_Figure
     boolean isLeft;
     public Black(int direction)
     {
+        GreenfootImage img = new GreenfootImage("Run1.png");
         if(direction < 0)
+        {
             isLeft = true;
+            img.mirrorHorizontally();
+            setImage(img);
+        }
         else
+        {
             isLeft = false;
+            setImage(img);
+        }
     }
-    
+
     public void act() 
     {
         animation();
         move();
         checkDespawn();
     }
-    
+
     public void checkDespawn()
     {
         BackDrop world = (BackDrop)getWorld();
         world.despawnStickFigure(this);
     }
-    
+
     public void move()
     {
         if(!isLeft)
