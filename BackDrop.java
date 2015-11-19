@@ -39,11 +39,11 @@ public class BackDrop extends World
         addObject(new Black(), 0, getHeight()/2);
     }
     
-    public void despawnEnemy(Black enemy)
+    public void despawnStickFigure(Stick_Figure figure)
     {
-        if((enemy.getX() >= getWidth()-5) || (enemy.getX() <= 5))
+        if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
-            removeObject(enemy);
+            removeObject(figure);
         }
     }
 
