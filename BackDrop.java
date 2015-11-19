@@ -33,6 +33,19 @@ public class BackDrop extends World
 
         addMainMenu();
     }
+    
+    public void spawnEnemy()
+    {
+        addObject(new Black(), 0, getHeight()/2);
+    }
+    
+    public void despawnEnemy(Black enemy)
+    {
+        if((enemy.getX() >= getWidth()-5) || (enemy.getX() <= 5))
+        {
+            removeObject(enemy);
+        }
+    }
 
     public void addMainMenu()
     {
