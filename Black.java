@@ -11,6 +11,7 @@ public class Black extends Stick_Figure
     int time = TIMEMAX;
     int frame = 0;
     boolean isLeft;
+    boolean isHit = false;
     public Black(int direction)
     {
         GreenfootImage img = new GreenfootImage("Run1.png");
@@ -31,7 +32,12 @@ public class Black extends Stick_Figure
     {
         animation();
         move();
-        checkDespawn();
+        if(isHit == true)
+        {
+            
+        }
+        else
+            checkDespawn();
     }
 
     public void checkDespawn()
