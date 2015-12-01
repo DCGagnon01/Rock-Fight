@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
@@ -24,13 +24,8 @@ public class Exit extends MainMenu
     {
         if(Greenfoot.mouseClicked(this))
         {
-<<<<<<< HEAD
             Greenfoot.stop();
-        }    
+        }   
+        System.exit(0);
     }
-=======
-            System.exit(0);
-        }
-    }    
->>>>>>> refs/remotes/origin/master
-}
+}    
