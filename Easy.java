@@ -18,7 +18,6 @@ public class Easy extends BackDrop
     {
         if(counter == EASY)
         {
-            spawnEnemy();
             counter = 0;
         }
         else

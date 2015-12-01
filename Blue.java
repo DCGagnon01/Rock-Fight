@@ -1,19 +1,19 @@
-import greenfoot.*; 
+import greenfoot.*;
 /**
- * Write a description of class Black here.
+ * Write a description of class Blue here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Black extends Stick_Figure
+public class Blue extends Stick_Figure 
 {
     final int TIMEMAX = 4;
     int time = TIMEMAX;
     int frame = 0;
     boolean isLeft;
-    public Black(int direction)
+    public Blue(int direction)
     {
-        GreenfootImage img = new GreenfootImage("Run1.png");
+        GreenfootImage img = new GreenfootImage("Blue1.png");
         if(direction < 0)
         {
             isLeft = true;
@@ -35,7 +35,7 @@ public class Black extends Stick_Figure
     }
 
     public void checkDespawn()
-    {
+    {         
         BackDrop world = (BackDrop)getWorld();
         world.despawnStickFigure(this);
     }
@@ -55,7 +55,7 @@ public class Black extends Stick_Figure
             frame ++;
             if (frame < 8)
             {
-                setImage("Run" + frame + ".png");
+                setImage("Blue" + frame + ".png");
                 if(isLeft)
                 {
                     GreenfootImage img = getImage();
@@ -75,3 +75,4 @@ public class Black extends Stick_Figure
         }
     }
 }
+

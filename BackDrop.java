@@ -11,9 +11,9 @@ import greenfoot.*;
  */
 public class BackDrop extends World
 {
-    final int EASY = 300;
-    final int NORMAL = 250;
-    final int HARD = 200;
+    final int EASY = 200;
+    final int NORMAL = 150;
+    final int HARD = 100;
 
     int score = 0;
 
@@ -33,17 +33,30 @@ public class BackDrop extends World
 
         addMainMenu();
     }
-    
-    public void spawnEnemy()
+
+    public void spawnBlack()
     {
-        addObject(new Black(), 0, getHeight()/2);
+        int random = Greenfoot.getRandomNumber(2)-1;
+        if(random >= 0)
+            addObject(new Black(1), 10, getHeight()/2);
+        else
+            addObject(new Black(-1), getWidth()-10, getHeight()/2);
     }
-    
-    public void despawnEnemy(Black enemy)
+
+    public void spawnBlue()
     {
-        if((enemy.getX() >= getWidth()-5) || (enemy.getX() <= 5))
+        int random = Greenfoot.getRandomNumber(2)-1;
+        if(random >=0)
+            addObject(new Blue(1), 0, getHeight()/2);
+        else
+            addObject(new Blue(-1), getWidth(), getHeight()/2);
+    }
+
+    public void despawnStickFigure(Stick_Figure figure)
+    {
+        if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
-            removeObject(enemy);
+            removeObject(figure);
         }
     }
 
@@ -83,9 +96,5 @@ public class BackDrop extends World
         fw.close();
     }
 }
-
-
-
-
 
 
