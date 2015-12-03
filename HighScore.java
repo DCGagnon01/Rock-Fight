@@ -32,14 +32,7 @@ public class HighScore extends MainMenu
 
     public void showScores() throws IOException
     {
-        try
-        {
-            BackDrop world = (BackDrop)getWorld();
-            world.recordScore("Test");
-        }
-        catch(IOException e)
-        {
-
-        }
+        BackDrop world = (BackDrop)getWorld();
+        world.readScores();
     }
 }

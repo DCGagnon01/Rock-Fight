@@ -19,6 +19,9 @@ public class BackDrop extends World
     int lives;
     boolean stopSpawn = false;
 
+    String scoreNames[] = new String[10];
+    int scoreNumbers[] = new int[10];
+
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
     HighScore scoresButton = new HighScore();
@@ -115,5 +118,20 @@ public class BackDrop extends World
             addObject(new StringInputBox(), getWidth()/2, getHeight()/2);
         }
     }
+
+    public void readScores()
+    {
+        Scanner inputFile = new Scanner("C:\\Rock-Fight\\highScores.txt");
+        for(int i=0; i<10; i++)
+        {
+            if(inputFile.hasNext())
+                scoreNames[i] = inputFile.next();
+            if(inputFile.hasNextInt())
+                scoreNumbers[i] = inputFile.nextInt();
+
+            System.out.println(scoreNames[i] + " " + scoreNumbers[i]);
+        }
+    }
 }
+
 
