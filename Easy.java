@@ -11,6 +11,7 @@ public class Easy extends BackDrop
     int counter = EASY;
     public Easy()
     {
+        lives = 3;
         removeMainMenu();
     }
 
@@ -18,6 +19,7 @@ public class Easy extends BackDrop
     {
         if(counter == EASY)
         {
+            spawnBlack();
             counter = 0;
         }
         else

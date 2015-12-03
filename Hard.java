@@ -11,6 +11,7 @@ public class Hard extends BackDrop
     int counter = HARD;
     public Hard()
     {
+        lives = 5;
         removeMainMenu();
     }
     

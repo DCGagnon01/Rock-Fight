@@ -16,6 +16,8 @@ public class BackDrop extends World
     final int HARD = 100;
 
     int score = 0;
+    int lives;
+    boolean stopSpawn = false;
 
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -36,20 +38,26 @@ public class BackDrop extends World
 
     public void spawnBlack()
     {
-        int random = Greenfoot.getRandomNumber(2)-1;
-        if(random >= 0)
-            addObject(new Black(1), 10, getHeight()/2);
-        else
-            addObject(new Black(-1), getWidth()-10, getHeight()/2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(2)-1;
+            if(random >= 0)
+                addObject(new Black(1), 10, getHeight()/2);
+            else
+                addObject(new Black(-1), getWidth()-10, getHeight()/2);
+        }
     }
 
     public void spawnBlue()
     {
-        int random = Greenfoot.getRandomNumber(2)-1;
-        if(random >=0)
-            addObject(new Blue(1), 0, getHeight()/2);
-        else
-            addObject(new Blue(-1), getWidth(), getHeight()/2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(2)-1;
+            if(random >=0)
+                addObject(new Blue(1), 0, getHeight()/2);
+            else
+                addObject(new Blue(-1), getWidth(), getHeight()/2);
+        }
     }
 
     public void despawnStickFigure(Stick_Figure figure)
@@ -57,6 +65,7 @@ public class BackDrop extends World
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
             removeObject(figure);
+            removeLife();
         }
     }
 
@@ -95,6 +104,16 @@ public class BackDrop extends World
         output.close();
         fw.close();
     }
-}
 
+    public void removeLife()
+    {
+        lives--;
+        if(lives <= 0)
+        {
+            stopSpawn = true;
+            removeObjects(getObjects(Stick_Figure.class));
+            addObject(new StringInputBox(), getWidth()/2, getHeight()/2);
+        }
+    }
+}
 

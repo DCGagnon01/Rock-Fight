@@ -5,6 +5,7 @@ public class Normal extends BackDrop
     int counter = NORMAL;
     public Normal()
     {
+        lives = 4;
         removeMainMenu();
     }
 
