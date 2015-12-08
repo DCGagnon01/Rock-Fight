@@ -16,6 +16,7 @@ public class BackDrop extends World
     final int HARD = 100;
 
     int score = 0;
+    boolean isPlaying = false;
 
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -31,26 +32,65 @@ public class BackDrop extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1080, 538, 1); 
-
         addMainMenu();
     }
 
+<<<<<<< HEAD
+    public void spawnBlack(int difficulty)
+=======
+    public void act()
+    {
+        Started();
+    }
+
+    public void Started()
+    {
+        if (!isPlaying)
+        {
+            GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
+            backgroundMusic.playLoop();
+            isPlaying = true;
+        }
+    }
+
     public void spawnBlack()
+>>>>>>> refs/remotes/origin/master
     {
         int random = Greenfoot.getRandomNumber(2)-1;
         if(random >= 0)
-            addObject(new Black(1), 10, getHeight()/2);
+            addObject(new Black(1, difficulty), 10, getHeight()/2);
         else
-            addObject(new Black(-1), getWidth()-10, getHeight()/2);
+            addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
     }
 
-    public void spawnBlue()
+    public void spawnBlackNormal()
     {
         int random = Greenfoot.getRandomNumber(2)-1;
-        if(random >=0)
-            addObject(new Blue(1), 0, getHeight()/2);
+        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+        if(random >= 0)
+            addObject(new Black(1), 10, random2);
         else
-            addObject(new Blue(-1), getWidth(), getHeight()/2);
+            addObject(new Black(-1), getWidth()-10, random2);
+    }
+
+     public void spawnBlueNormal()
+    {
+        int random = Greenfoot.getRandomNumber(4)-1;
+        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+        if(random >= 0)
+            addObject(new Blue(1), 0, random2);
+        else
+            addObject(new Blue(-1), getWidth()-10, random2);
+    }
+
+    public void spawnBlueHard()
+    {
+        int random = Greenfoot.getRandomNumber(2)-1;
+        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+        if(random >= 0)
+            addObject(new Blue(1), 0, random2);
+        else
+            addObject(new Blue(-1), getWidth()-10, random2);
     }
 
     public void despawnStickFigure(Stick_Figure figure)
@@ -98,5 +138,4 @@ public class BackDrop extends World
         fw.close();
     }
 }
-
 
