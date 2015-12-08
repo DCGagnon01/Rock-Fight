@@ -17,12 +17,12 @@ public class Hard extends BackDrop
 
     public void act()
     {
+        spawnRock();
         if(counter == HARD)
         {
             counter = 0;
             spawnBlackNormal(3);
             spawnBlueHard();
-
         }
         else
         {

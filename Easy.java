@@ -17,6 +17,7 @@ public class Easy extends BackDrop
 
     public void act()
     {
+        spawnRock();
         if(counter == EASY)
         {
             counter = 0;

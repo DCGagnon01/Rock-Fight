@@ -51,7 +51,10 @@ public class Black extends Stick_Figure
             
         }
         else
+        {
             checkDespawn();
+            hitDetection();
+        }
     }
 
     public void checkDespawn()
@@ -97,12 +100,14 @@ public class Black extends Stick_Figure
 
     public void hitDetection()  
     {
-        Actor b = getOneIntersectingObject(Rock.class);  
+        Actor rock = getOneIntersectingObject(Rock.class);  
+        BackDrop world = (BackDrop)getWorld();
 
-        if(b != null)  
+        if(rock != null)  
         {  
-            getWorld().removeObject(b);   
-            getWorld().removeObject(this);
+            world.removeObject(rock);
+            world.score += score;
+            world.removeObject(this);
         } 
     }
 }

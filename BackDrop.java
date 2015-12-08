@@ -44,14 +44,15 @@ public class BackDrop extends World
     public void act()
     {
         Started();
-        if(chosenDifficulty)
+    }
+
+    public void spawnRock()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null && Greenfoot.mouseClicked(null))
         {
-            if(Greenfoot.mouseClicked(this))
-            {
-                MouseInfo mouse = Greenfoot.getMouseInfo();
-                addObject(new Rock(), mouse.getX(), mouse.getY());
-            }
-        }
+            addObject(new Rock(), mouse.getX(), mouse.getY());
+        }	
     }
 
     public void Started()
@@ -191,5 +192,10 @@ public class BackDrop extends World
         {
 
         }
+    }
+    
+    public void restart()
+    {
+        Greenfoot.setWorld(new BackDrop());
     }
 }
