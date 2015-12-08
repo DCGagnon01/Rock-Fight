@@ -16,7 +16,14 @@ public class BackDrop extends World
     final int HARD = 100;
 
     int score = 0;
+    int lives;
+    boolean stopSpawn = false;
+
+    String scoreNames[] = new String[10];
+    int scoreNumbers[] = new int[10];
+
     boolean isPlaying = false;
+    boolean chosenDifficulty = false;
 
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -35,12 +42,17 @@ public class BackDrop extends World
         addMainMenu();
     }
 
-<<<<<<< HEAD
-    public void spawnBlack(int difficulty)
-=======
     public void act()
     {
         Started();
+        if(chosenDifficulty)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                MouseInfo mouse = Greenfoot.getMouseInfo();
+                addObject(new Rock(), mouse.getX(), mouse.getY());
+            }
+        }
     }
 
     public void Started()
@@ -53,44 +65,55 @@ public class BackDrop extends World
         }
     }
 
-    public void spawnBlack()
->>>>>>> refs/remotes/origin/master
+    public void spawnBlack(int difficulty)
     {
-        int random = Greenfoot.getRandomNumber(2)-1;
-        if(random >= 0)
-            addObject(new Black(1, difficulty), 10, getHeight()/2);
-        else
-            addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(2)-1;
+            if(random >= 0)
+                addObject(new Black(1, difficulty), 10, getHeight()/2);
+            else
+                addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
+        }
     }
 
-    public void spawnBlackNormal()
+    public void spawnBlackNormal(int difficulty)
     {
-        int random = Greenfoot.getRandomNumber(2)-1;
-        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
-        if(random >= 0)
-            addObject(new Black(1), 10, random2);
-        else
-            addObject(new Black(-1), getWidth()-10, random2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(2)-1;
+            int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+            if(random >= 0)
+                addObject(new Black(1, difficulty), 10, random2);
+            else
+                addObject(new Black(-1, difficulty), getWidth()-10, random2);
+        }
     }
 
-     public void spawnBlueNormal()
+    public void spawnBlueNormal()
     {
-        int random = Greenfoot.getRandomNumber(4)-1;
-        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
-        if(random >= 0)
-            addObject(new Blue(1), 0, random2);
-        else
-            addObject(new Blue(-1), getWidth()-10, random2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(4)-1;
+            int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+            if(random >= 0)
+                addObject(new Blue(1), 0, random2);
+            else
+                addObject(new Blue(-1), getWidth()-10, random2);
+        }
     }
 
     public void spawnBlueHard()
     {
-        int random = Greenfoot.getRandomNumber(2)-1;
-        int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
-        if(random >= 0)
-            addObject(new Blue(1), 0, random2);
-        else
-            addObject(new Blue(-1), getWidth()-10, random2);
+        if(!stopSpawn)
+        {
+            int random = Greenfoot.getRandomNumber(2)-1;
+            int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
+            if(random >= 0)
+                addObject(new Blue(1), 0, random2);
+            else
+                addObject(new Blue(-1), getWidth()-10, random2);
+        }
     }
 
     public void despawnStickFigure(Stick_Figure figure)
@@ -98,6 +121,7 @@ public class BackDrop extends World
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
             removeObject(figure);
+            removeLife();
         }
     }
 
@@ -116,6 +140,7 @@ public class BackDrop extends World
         removeObject(soundButton);
         removeObject(scoresButton);
         removeObject(exitButton);
+        removeObject(titlePicture);
     }
 
     public void addDifficultySelect()
@@ -137,5 +162,35 @@ public class BackDrop extends World
         output.close();
         fw.close();
     }
-}
 
+    public void removeLife()
+    {
+        lives--;
+        if(lives <= 0)
+        {
+            stopSpawn = true;
+            removeObjects(getObjects(Stick_Figure.class));
+            addObject(new StringInputBox(), getWidth()/2, getHeight()/2);
+        }
+    }
+
+    public void readScores()
+    {
+        try
+        {
+            File file = new File("C:\\Rock-Fight\\highScores.txt");
+            Scanner inputFile = new Scanner(file);
+            for(int i=0; i<10; i++)
+            {
+                if(inputFile.hasNext())
+                    scoreNames[i] = inputFile.next();
+                if(inputFile.hasNextInt())
+                    scoreNumbers[i] = inputFile.nextInt();
+            }
+        }
+        catch(IOException ioe)
+        {
+
+        }
+    }
+}

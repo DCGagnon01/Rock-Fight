@@ -19,27 +19,14 @@ public class HighScore extends MainMenu
     {
         if(Greenfoot.mouseClicked(this))
         {
-            try
-            {
-                showScores();
-            }
-            catch(IOException e)
-            {
-                System.out.println("invalid");
-            }
+            BackDrop world = (BackDrop)getWorld();
+            world.readScores();
         }
     }    
 
     public void showScores() throws IOException
     {
-        try
-        {
-            BackDrop world = (BackDrop)getWorld();
-            world.recordScore("Test");
-        }
-        catch(IOException e)
-        {
-
-        }
+        BackDrop world = (BackDrop)getWorld();
+        world.readScores();
     }
 }
