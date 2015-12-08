@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 #Greenfoot properties
+<<<<<<< HEAD
 #Tue Dec 08 09:04:16 EST 2015
 target16.name=StartGame
 class.Black.superclass=Stick_Figure
@@ -16,6 +17,13 @@ target5.naviview.expanded=true
 dependency8.to=BackDrop
 target14.type=ClassTarget
 simulation.speed=70
+=======
+#Tue Dec 08 10:13:59 EST 2015
+target16.name=Menu
+class.Black.superclass=Stick_Figure
+target2.name=NormalButton
+target9.name=Normal
+>>>>>>> refs/remotes/origin/master
 =======
 #Greenfoot project file
 class.BackDrop.image=BackDrop.png
@@ -132,7 +140,9 @@ dependency10.to=NormalButton
 dependency10.type=UsesDependency
 dependency11.from=BackDrop
 dependency11.to=HardButton
+>>>>>>> master
 dependency11.type=UsesDependency
+<<<<<<< HEAD
 dependency12.from=StartGame
 dependency12.to=Menu
 dependency12.type=UsesDependency
@@ -140,6 +150,101 @@ dependency12.type=UsesDependency
 dependency13.from=NormalButton
 dependency16.type=UsesDependency
 <<<<<<< HEAD
+=======
+class.Sound.superclass=MainMenu
+dependency18.type=UsesDependency
+dependency15.from=EasyButton
+readme.editor.y=0
+readme.editor.x=0
+dependency8.to=BackDrop
+target5.naviview.expanded=true
+target14.type=ClassTarget
+simulation.speed=64
+class.Exit.superclass=MainMenu
+dependency22.from=BackDrop
+target15.width=100
+target15.height=50
+target7.type=ClassTarget
+target15.typeParameters=
+target11.width=80
+target1.typeParameters=
+class.Exit.image=Exit.png
+target10.editor.y=20
+target10.editor.x=40
+dependency2.to=Sound
+target6.naviview.expanded=true
+readme.editor.height=700
+target6.editor.width=900
+dependency1.type=UsesDependency
+target16.y=10
+target16.x=160
+dependency8.type=UsesDependency
+dependency5.from=Menu
+target12.y=250
+target12.x=10
+target3.editor.y=20
+target3.editor.x=40
+project.charset=UTF-8
+target12.typeParameters=
+dependency15.to=Easy
+target15.name=Stick_Figure
+target5.height=50
+target1.name=Easy
+version=2.8.0
+target11.naviview.expanded=true
+target8.name=Black
+class.MainMenu.superclass=Menu
+dependency10.type=UsesDependency
+dependency17.type=UsesDependency
+<<<<<<< HEAD
+dependency14.from=NormalButton
+package.numTargets=17
+class.Normal.superclass=BackDrop
+target13.type=ClassTarget
+dependency21.from=Blue
+target12.naviview.expanded=true
+dependency9.to=EasyButton
+target6.type=ClassTarget
+class.Hard.superclass=BackDrop
+target7.y=70
+target7.x=170
+class.HighScore.image=Scores.png
+target12.editor.y=20
+target12.editor.x=40
+target8.editor.width=900
+target3.y=130
+target3.x=10
+target7.typeParameters=
+target8.height=50
+mainWindow.y=0
+mainWindow.x=-8
+target12.showInterface=false
+target3.showInterface=false
+target17.typeParameters=
+dependency3.to=HighScore
+target1.width=80
+dependency7.type=UsesDependency
+dependency4.from=Menu
+class.HighScore.superclass=MainMenu
+target5.editor.y=20
+target5.editor.x=40
+dependency20.to=BackDrop
+target5.editor.height=700
+target14.name=StartGame
+target9.height=50
+target2.naviview.expanded=true
+target11.showInterface=false
+target2.showInterface=false
+target7.name=Sound
+dependency16.to=Hard
+target16.naviview.expanded=true
+target1.editor.y=20
+target1.editor.x=40
+class.StartGame.image=Start.png
+class.BackDrop.image=BackDrop.png
+dependency13.from=NormalButton
+dependency16.type=UsesDependency
+>>>>>>> refs/remotes/origin/master
 target14.typeParameters=
 target8.width=80
 target13.editor.height=700
@@ -148,14 +253,20 @@ target12.type=ClassTarget
 target13.height=50
 dependency23.type=UsesDependency
 dependency20.from=Black
+<<<<<<< HEAD
 target19.type=ClassTarget
 target4.width=80
 target9.showInterface=false
 target18.showInterface=false
+=======
+target4.width=80
+target9.showInterface=false
+>>>>>>> refs/remotes/origin/master
 target10.showInterface=false
 target1.showInterface=false
 class.Black.image=Run1.png
 target5.type=ClassTarget
+<<<<<<< HEAD
 target14.editor.y=42
 dependency10.to=NormalButton
 target14.editor.x=228
@@ -178,6 +289,13 @@ target17.showInterface=false
 dependency17.from=BackDrop
 dependency17.to=Exit
 dependency17.type=UsesDependency
+=======
+dependency10.to=NormalButton
+target2.height=50
+target15.y=370
+target15.x=10
+=======
+>>>>>>> refs/remotes/origin/master
 dependency18.from=HighScore
 dependency18.to=BackDrop
 dependency18.type=UsesDependency
@@ -316,8 +434,90 @@ target11.type=ClassTarget
 target11.typeParameters=
 target11.width=90
 target11.x=190
+>>>>>>> master
 target11.y=130
+target3.editor.height=700
+target11.x=100
 target12.editor.height=700
+<<<<<<< HEAD
+readme.height=58
+target5.editor.width=900
+target8.showInterface=false
+target17.showInterface=false
+dependency3.from=BackDrop
+target11.typeParameters=
+dependency6.type=UsesDependency
+target13.editor.width=900
+dependency4.to=BackDrop
+target7.editor.y=20
+target9.typeParameters=
+target7.editor.x=40
+class.Menu.superclass=greenfoot.Actor
+target16.height=50
+target7.width=80
+target11.editor.height=700
+target2.editor.height=700
+target13.name=DifficultyMenu
+dependency21.to=BackDrop
+target7.naviview.expanded=true
+target6.name=Hard
+target16.showInterface=false
+dependency15.type=UsesDependency
+dependency12.from=StartGame
+target14.width=90
+dependency17.to=Exit
+dependency19.from=BackDrop
+target6.y=310
+target6.x=10
+target9.editor.height=700
+target10.width=90
+target2.y=190
+target10.editor.height=700
+target11.type=ClassTarget
+target2.x=120
+dependency22.type=UsesDependency
+class.NormalButton.superclass=DifficultyMenu
+target17.height=50
+target6.typeParameters=
+target4.type=ClassTarget
+class.EasyButton.image=Easy.png
+dependency11.to=HardButton
+target6.height=50
+class.Stick_Figure.superclass=greenfoot.Actor
+target7.editor.width=900
+class.BackDrop.superclass=greenfoot.World
+target9.editor.y=20
+target9.editor.x=40
+dependency5.type=UsesDependency
+dependency2.from=BackDrop
+target17.width=80
+dependency9.from=BackDrop
+target10.height=50
+target13.naviview.expanded=true
+class.HardButton.image=Hard.png
+target2.editor.width=900
+target3.typeParameters=
+target13.width=100
+dependency5.to=StartGame
+target10.editor.width=900
+target12.name=HardButton
+class.StartGame.superclass=MainMenu
+target13.typeParameters=
+target5.name=BackDrop
+dependency22.to=Stick_Figure
+dependency14.type=UsesDependency
+dependency11.from=BackDrop
+target14.naviview.expanded=true
+dependency18.from=HighScore
+target14.y=70
+target14.x=70
+target10.type=ClassTarget
+dependency18.to=BackDrop
+dependency21.type=UsesDependency
+package.numDependencies=23
+target17.type=ClassTarget
+target10.y=130
+=======
 target12.editor.width=900
 target12.editor.x=40
 target12.editor.y=20
@@ -439,22 +639,54 @@ target3.height=50
 target3.name=HighScore
 target3.naviview.expanded=true
 target3.showInterface=false
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> master
 >>>>>>> refs/remotes/origin/master
 target3.type=ClassTarget
 target10.x=190
 target3.naviview.expanded=true
 readme.name=@README
 target11.editor.y=20
+<<<<<<< HEAD
 target16.width=90
 target11.editor.x=40
 target10.typeParameters=
 target18.editor.width=900
+=======
+target16.width=80
+target11.editor.x=40
+target10.typeParameters=
+>>>>>>> refs/remotes/origin/master
 target8.typeParameters=
 dependency12.to=Menu
 target4.editor.width=900
 dependency4.type=UsesDependency
 dependency1.from=BackDrop
 dependency8.from=Sound
+<<<<<<< HEAD
+=======
+target12.editor.width=900
+target4.naviview.expanded=true
+target14.height=50
+target9.y=250
+target4.editor.y=20
+target9.x=110
+target4.editor.x=40
+class.HardButton.superclass=DifficultyMenu
+target11.name=MainMenu
+target5.y=10
+target5.x=70
+target3.height=50
+dependency6.to=Sound
+target4.name=Blue
+<<<<<<< HEAD
+target1.y=250
+target1.x=200
+class.Blue.image=Blue1.png
+=======
+>>>>>>> refs/remotes/origin/master
 target4.naviview.expanded=true
 <<<<<<< HEAD
 target12.editor.width=900
@@ -492,22 +724,34 @@ target5.name=BackDrop
 target5.naviview.expanded=true
 target5.showInterface=false
 target5.type=ClassTarget
+<<<<<<< HEAD
+>>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> master
 >>>>>>> refs/remotes/origin/master
 target5.typeParameters=
 dependency13.type=UsesDependency
 dependency10.from=BackDrop
 target7.showInterface=false
+<<<<<<< HEAD
 target3.width=110
+=======
+target3.width=80
+>>>>>>> refs/remotes/origin/master
 dependency17.from=BackDrop
 class.Sound.image=Sound.png
 dependency23.to=Blue
 dependency20.type=UsesDependency
 target16.type=ClassTarget
+<<<<<<< HEAD
 dependency24.from=StringInputBox
+=======
+>>>>>>> refs/remotes/origin/master
 target2.type=ClassTarget
 target9.type=ClassTarget
 target1.editor.height=700
 dependency19.to=Black
+<<<<<<< HEAD
 target13.editor.y=20
 target13.editor.x=40
 target4.height=50
@@ -516,6 +760,15 @@ class.Easy.superclass=BackDrop
 target8.naviview.expanded=true
 target6.showInterface=false
 target15.showInterface=false
+=======
+target13.editor.y=42
+target13.editor.x=228
+target4.height=50
+class.Easy.superclass=BackDrop
+target8.naviview.expanded=true
+target15.showInterface=false
+target6.showInterface=false
+>>>>>>> refs/remotes/origin/master
 readme.y=10
 readme.x=10
 target10.naviview.expanded=true
@@ -528,6 +781,7 @@ dependency7.from=Menu
 target6.width=80
 readme.width=47
 target6.editor.y=20
+<<<<<<< HEAD
 mainWindow.height=744
 target9.naviview.expanded=true
 target6.editor.x=40
@@ -553,18 +807,49 @@ target7.editor.height=735
 target16.editor.height=700
 target19.editor.y=20
 target19.editor.x=40
+=======
+mainWindow.height=1038
+target9.naviview.expanded=true
+target6.editor.x=40
+target14.showInterface=false
+target5.showInterface=false
+target1.editor.width=900
+readme.editor.width=900
+target2.width=100
+target10.name=EasyButton
+target17.y=310
+target17.x=100
+target17.name=Exit
+target3.name=HighScore
+target13.y=190
+target7.height=50
+<<<<<<< HEAD
+target13.x=10
+target2.editor.y=20
+target2.editor.x=40
+class.DifficultyMenu.superclass=Menu
+target7.editor.height=700
+>>>>>>> refs/remotes/origin/master
 dependency7.to=HighScore
 dependency12.type=UsesDependency
 dependency19.type=UsesDependency
 dependency16.from=HardButton
+<<<<<<< HEAD
 target4.showInterface=false
 target13.showInterface=false
+=======
+target13.showInterface=false
+target4.showInterface=false
+>>>>>>> refs/remotes/origin/master
 class.NormalButton.image=Normal.png
 class.Blue.superclass=Stick_Figure
 target15.type=ClassTarget
 dependency23.from=BackDrop
 target11.height=50
+<<<<<<< HEAD
 dependency24.to=BackDrop
+=======
+>>>>>>> refs/remotes/origin/master
 target1.type=ClassTarget
 target9.width=80
 target8.type=ClassTarget
@@ -575,19 +860,31 @@ target5.width=80
 target1.naviview.expanded=true
 target15.naviview.expanded=true
 target8.y=310
+<<<<<<< HEAD
 target8.x=10
+=======
+target8.x=190
+>>>>>>> refs/remotes/origin/master
 target3.editor.width=900
 target12.width=90
 class.EasyButton.superclass=DifficultyMenu
 dependency2.type=UsesDependency
+<<<<<<< HEAD
 target4.y=430
 target4.x=10
+=======
+target4.y=370
+target4.x=120
+>>>>>>> refs/remotes/origin/master
 target8.editor.y=20
 dependency9.type=UsesDependency
 dependency6.from=Menu
 target12.height=50
 target8.editor.x=40
+<<<<<<< HEAD
 target14.editor.height=700
+=======
+>>>>>>> refs/remotes/origin/master
 target11.editor.width=900
 =======
 target7.name=Title
@@ -624,6 +921,7 @@ target9.width=80
 target9.x=10
 target9.y=370
 version=2.8.0
+<<<<<<< HEAD
 >>>>>>> refs/remotes/origin/master
 world.lastInstantiated=BackDrop
 dependency14.to=BackDrop
@@ -632,3 +930,11 @@ target19.showInterface=false
 target1.height=50
 target4.typeParameters=
 mainWindow.width=1382
+=======
+>>>>>>> master
+world.lastInstantiated=BackDrop
+dependency14.to=BackDrop
+target1.height=50
+mainWindow.width=1932
+target4.typeParameters=
+>>>>>>> refs/remotes/origin/master
