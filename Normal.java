@@ -5,6 +5,7 @@ public class Normal extends BackDrop
     int counter = NORMAL;
     public Normal()
     {
+        lives = 4;
         removeMainMenu();
     }
 
@@ -12,10 +13,9 @@ public class Normal extends BackDrop
     {
         if(counter == NORMAL)
         {
-            spawnBlack(2);
             counter = 0;
             spawnBlueNormal();
-            spawnBlackNormal();
+            spawnBlackNormal(2);
         }
         else
         {
