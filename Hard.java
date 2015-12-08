@@ -14,16 +14,15 @@ public class Hard extends BackDrop
         lives = 5;
         removeMainMenu();
     }
-    
+
     public void act()
     {
         if(counter == HARD)
         {
-            spawnBlack(3);
             counter = 0;
-            spawnBlackNormal();
+            spawnBlackNormal(3);
             spawnBlueHard();
-            
+
         }
         else
         {

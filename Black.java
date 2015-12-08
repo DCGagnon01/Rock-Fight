@@ -12,12 +12,8 @@ public class Black extends Stick_Figure
     int score;
     int frame = 0;
     boolean isLeft;
-<<<<<<< HEAD
     boolean isHit = false;
-    public Black(int direction)
-=======
     public Black(int direction, int difficulty)
->>>>>>> refs/remotes/origin/master
     {
         if (difficulty == 1)
         {

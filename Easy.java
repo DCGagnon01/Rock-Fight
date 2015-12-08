@@ -19,14 +19,8 @@ public class Easy extends BackDrop
     {
         if(counter == EASY)
         {
-            spawnBlack();
             counter = 0;
-<<<<<<< HEAD
             spawnBlack(1);
-=======
-        spawnBlack();
-
->>>>>>> refs/remotes/origin/master
         }
         else
         {

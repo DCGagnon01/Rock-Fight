@@ -41,9 +41,6 @@ public class BackDrop extends World
         addMainMenu();
     }
 
-<<<<<<< HEAD
-    public void spawnBlack(int difficulty)
-=======
     public void act()
     {
         Started();
@@ -59,37 +56,28 @@ public class BackDrop extends World
         }
     }
 
-    public void spawnBlack()
->>>>>>> refs/remotes/origin/master
+    public void spawnBlack(int difficulty)
     {
-<<<<<<< HEAD
         if(!stopSpawn)
         {
             int random = Greenfoot.getRandomNumber(2)-1;
             if(random >= 0)
-                addObject(new Black(1), 10, getHeight()/2);
+                addObject(new Black(1, difficulty), 10, getHeight()/2);
             else
-                addObject(new Black(-1), getWidth()-10, getHeight()/2);
+                addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
         }
-=======
-        int random = Greenfoot.getRandomNumber(2)-1;
-        if(random >= 0)
-            addObject(new Black(1, difficulty), 10, getHeight()/2);
-        else
-            addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
->>>>>>> refs/remotes/origin/master
     }
 
-    public void spawnBlackNormal()
+    public void spawnBlackNormal(int difficulty)
     {
         if(!stopSpawn)
         {
             int random = Greenfoot.getRandomNumber(2)-1;
             int random2 = Greenfoot.getRandomNumber(getHeight()/2)+ (getHeight()/2);
             if(random >= 0)
-                addObject(new Black(1), 10, random2);
+                addObject(new Black(1, difficulty), 10, random2);
             else
-                addObject(new Black(-1), getWidth()-10, random2);
+                addObject(new Black(-1, difficulty), getWidth()-10, random2);
         }
     }
 
@@ -143,6 +131,7 @@ public class BackDrop extends World
         removeObject(soundButton);
         removeObject(scoresButton);
         removeObject(exitButton);
+        removeObject(titlePicture);
     }
 
     public void addDifficultySelect()
