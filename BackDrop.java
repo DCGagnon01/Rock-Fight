@@ -76,6 +76,7 @@ public class BackDrop extends World
         removeObject(soundButton);
         removeObject(scoresButton);
         removeObject(exitButton);
+        removeObject(titlePicture);
     }
 
     public void addDifficultySelect()
