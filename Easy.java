@@ -11,6 +11,7 @@ public class Easy extends BackDrop
     int counter = EASY;
     public Easy()
     {
+        lives = 3;
         removeMainMenu();
     }
 
@@ -19,12 +20,7 @@ public class Easy extends BackDrop
         if(counter == EASY)
         {
             counter = 0;
-<<<<<<< HEAD
             spawnBlack(1);
-=======
-        spawnBlack();
-
->>>>>>> refs/remotes/origin/master
         }
         else
         {

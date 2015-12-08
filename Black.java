@@ -12,6 +12,7 @@ public class Black extends Stick_Figure
     int score;
     int frame = 0;
     boolean isLeft;
+    boolean isHit = false;
     public Black(int direction, int difficulty)
     {
         if (difficulty == 1)
@@ -45,7 +46,12 @@ public class Black extends Stick_Figure
     {
         animation();
         move();
-        checkDespawn();
+        if(isHit == true)
+        {
+            
+        }
+        else
+            checkDespawn();
     }
 
     public void checkDespawn()
