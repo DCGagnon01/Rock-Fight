@@ -8,4 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Rock extends Actor
 {
-} 
+    GreenfootImage img;
+    int count = 0;
+    public Rock()
+    {
+    	img = new GreenfootImage(getImage());
+    }
+    
+    public void act()
+    {
+        img.scale((int)(img.getWidth()*.95), (int)(img.getHeight()*.95));
+        if(count >= 5)
+        {
+            BackDrop world = (BackDrop)getWorld();
+            world.removeObject(this);
+        }
+        count++;
+    }
+}
