@@ -1,19 +1,6 @@
 
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class Exit here.
- * This class exits the game whenever the player is done playing.
-=======
-import greenfoot.*;
-
-/**
- * Write a description of class Exit here.
- * 
->>>>>>> refs/remotes/origin/master
- * @author (your name) 
- * @version (a version number or a date)
- */
 public class Exit extends MainMenu
 {
     /**
@@ -24,8 +11,7 @@ public class Exit extends MainMenu
     {
         if(Greenfoot.mouseClicked(this))
         {
-            Greenfoot.stop();
-        }   
-        System.exit(0);
+            System.exit(0);
+        }
     }
 }    
