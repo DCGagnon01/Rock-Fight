@@ -20,6 +20,9 @@ public class Hard extends BackDrop
         {
             spawnBlack(3);
             counter = 0;
+            spawnBlackNormal();
+            spawnBlueHard();
+            
         }
         else
         {

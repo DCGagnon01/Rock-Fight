@@ -14,6 +14,8 @@ public class Normal extends BackDrop
         {
             spawnBlack(2);
             counter = 0;
+            spawnBlueNormal();
+            spawnBlackNormal();
         }
         else
         {
