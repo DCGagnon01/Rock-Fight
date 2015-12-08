@@ -34,13 +34,13 @@ public class BackDrop extends World
         addMainMenu();
     }
 
-    public void spawnBlack()
+    public void spawnBlack(int difficulty)
     {
         int random = Greenfoot.getRandomNumber(2)-1;
         if(random >= 0)
-            addObject(new Black(1), 10, getHeight()/2);
+            addObject(new Black(1, difficulty), 10, getHeight()/2);
         else
-            addObject(new Black(-1), getWidth()-10, getHeight()/2);
+            addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
     }
 
     public void spawnBlue()

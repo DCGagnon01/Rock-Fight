@@ -9,10 +9,24 @@ public class Black extends Stick_Figure
 {
     final int TIMEMAX = 4;
     int time = TIMEMAX;
+    int score;
     int frame = 0;
     boolean isLeft;
-    public Black(int direction)
+    public Black(int direction, int difficulty)
     {
+        if (difficulty == 1)
+        {
+            score = 50;
+        }
+        else if (difficulty == 2)
+        {
+            score = 100;
+        }
+        else
+        {
+            score = 150;
+        }
+        
         GreenfootImage img = new GreenfootImage("Run1.png");
         if(direction < 0)
         {
