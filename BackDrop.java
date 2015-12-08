@@ -23,6 +23,7 @@ public class BackDrop extends World
     int scoreNumbers[] = new int[10];
 
     boolean isPlaying = false;
+    boolean chosenDifficulty = false;
 
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -44,6 +45,14 @@ public class BackDrop extends World
     public void act()
     {
         Started();
+        if(chosenDifficulty)
+        {
+            if(Greenfoot.mouseClicked(this))
+            {
+                MouseInfo mouse = Greenfoot.getMouseInfo();
+                addObject(new Rock(), mouse.getX(), mouse.getY());
+            }
+        }
     }
 
     public void Started()
