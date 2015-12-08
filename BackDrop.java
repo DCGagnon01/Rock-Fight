@@ -41,6 +41,9 @@ public class BackDrop extends World
         addMainMenu();
     }
 
+<<<<<<< HEAD
+    public void spawnBlack(int difficulty)
+=======
     public void act()
     {
         Started();
@@ -57,7 +60,9 @@ public class BackDrop extends World
     }
 
     public void spawnBlack()
+>>>>>>> refs/remotes/origin/master
     {
+<<<<<<< HEAD
         if(!stopSpawn)
         {
             int random = Greenfoot.getRandomNumber(2)-1;
@@ -66,6 +71,13 @@ public class BackDrop extends World
             else
                 addObject(new Black(-1), getWidth()-10, getHeight()/2);
         }
+=======
+        int random = Greenfoot.getRandomNumber(2)-1;
+        if(random >= 0)
+            addObject(new Black(1, difficulty), 10, getHeight()/2);
+        else
+            addObject(new Black(-1, difficulty), getWidth()-10, getHeight()/2);
+>>>>>>> refs/remotes/origin/master
     }
 
     public void spawnBlackNormal()

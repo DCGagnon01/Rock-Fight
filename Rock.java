@@ -6,6 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
+<<<<<<< HEAD
 public class Rock extends Actor
 {
     final int MAXTIME = 3;
@@ -46,4 +47,9 @@ public class Rock extends Actor
         else
             timer++;
     }
+=======
+public class Rock extends Stick_Figure
+{
+    
+>>>>>>> refs/remotes/origin/master
 }

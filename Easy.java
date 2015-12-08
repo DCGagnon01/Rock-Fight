@@ -21,17 +21,16 @@ public class Easy extends BackDrop
         {
             spawnBlack();
             counter = 0;
+<<<<<<< HEAD
+            spawnBlack(1);
+=======
         spawnBlack();
 
+>>>>>>> refs/remotes/origin/master
         }
         else
         {
             counter++;
         }
-    }
-
-    public void spawnEnemy()
-    {
-
     }
 }

@@ -19,6 +19,7 @@ public class Hard extends BackDrop
     {
         if(counter == HARD)
         {
+            spawnBlack(3);
             counter = 0;
             spawnBlackNormal();
             spawnBlueHard();
