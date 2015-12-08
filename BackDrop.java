@@ -121,15 +121,21 @@ public class BackDrop extends World
 
     public void readScores()
     {
-        Scanner inputFile = new Scanner("C:\\Rock-Fight\\highScores.txt");
-        for(int i=0; i<10; i++)
+        try
         {
-            if(inputFile.hasNext())
-                scoreNames[i] = inputFile.next();
-            if(inputFile.hasNextInt())
-                scoreNumbers[i] = inputFile.nextInt();
+            File file = new File("C:\\Rock-Fight\\highScores.txt");
+            Scanner inputFile = new Scanner(file);
+            for(int i=0; i<10; i++)
+            {
+                if(inputFile.hasNext())
+                    scoreNames[i] = inputFile.next();
+                if(inputFile.hasNextInt())
+                    scoreNumbers[i] = inputFile.nextInt();
+            }
+        }
+        catch(IOException ioe)
+        {
 
-            System.out.println(scoreNames[i] + " " + scoreNumbers[i]);
         }
     }
 }
