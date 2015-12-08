@@ -19,6 +19,7 @@ public class Easy extends BackDrop
         if(counter == EASY)
         {
             counter = 0;
+            spawnBlack();
         }
         else
         {

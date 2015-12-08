@@ -74,4 +74,15 @@ public class Black extends Stick_Figure
             time ++;   
         }
     }
+
+    public void hitDetection()  
+    {
+        Actor b = getOneIntersectingObject(Rock.class);  
+
+        if(b != null)  
+        {  
+            getWorld().removeObject(b);   
+            getWorld().removeObject(this);
+        } 
+    }
 }

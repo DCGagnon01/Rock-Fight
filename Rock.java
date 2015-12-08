@@ -6,19 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Rock extends Actor
+public class Rock extends Stick_Figure
 {
-    /**
-     * Act - do whatever the Rock wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-   public void hitDetection()  {
-   
-   Actor b = getOneIntersectingObject(Enemy.class);  
-      
-   if(b != null)  
-   {  
-       getWorld().removeObject(b);   
-       getWorld().removeObject(this);
-   }  
+    
 }
