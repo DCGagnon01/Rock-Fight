@@ -9,6 +9,7 @@ import greenfoot.*;
 public class Easy extends BackDrop
 {
     int counter = EASY;
+    int rockTimer = EASY+10;
     public Easy()
     {
         lives = 3;
@@ -17,7 +18,13 @@ public class Easy extends BackDrop
 
     public void act()
     {
-        spawnRock();
+        if(rockTimer >= (EASY+10))
+        {
+            if(spawnRock())
+                rockTimer = 0;
+        }
+        else
+            rockTimer++;
         if(counter == EASY)
         {
             counter = 0;

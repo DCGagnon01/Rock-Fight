@@ -33,6 +33,8 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
+    
+    ScoreCounter scoreCounter = new ScoreCounter();
 
     public BackDrop()
     {    
@@ -45,13 +47,15 @@ public class BackDrop extends World
         Started();
     }
 
-    public void spawnRock()
+    public boolean spawnRock()
     {
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null && Greenfoot.mouseClicked(null))
         {
             addObject(new Rock(), mouse.getX(), mouse.getY());
+            return true;
         }   
+        return false;
     }
 
     public void Started()
@@ -115,12 +119,19 @@ public class BackDrop extends World
         }
     }
 
-    public void despawnStickFigure(Stick_Figure figure)
+    public void despawnBlack(Stick_Figure figure)
     {
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
-            if(figure.equals(Black.class))
-                removeLife();
+            removeLife();
+            removeObject(figure);
+        }
+    }
+
+    public void despawnBlue(Stick_Figure figure)
+    {
+        if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
+        {
             removeObject(figure);
         }
     }
