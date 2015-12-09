@@ -12,7 +12,6 @@ public class Black extends Stick_Figure
     int score;
     int frame = 0;
     boolean isLeft;
-    boolean isHit = false;
     public Black(int direction, int difficulty)
     {
         if (difficulty == 1)
@@ -27,7 +26,7 @@ public class Black extends Stick_Figure
         {
             score = 150;
         }
-        
+
         GreenfootImage img = new GreenfootImage("Run1.png");
         if(direction < 0)
         {
@@ -46,14 +45,13 @@ public class Black extends Stick_Figure
     {
         animation();
         move();
-        if(isHit == true)
+        if(isHit())
         {
-            
+            hitDetection();
         }
         else
         {
             checkDespawn();
-            hitDetection();
         }
     }
 
@@ -96,6 +94,14 @@ public class Black extends Stick_Figure
         {
             time ++;   
         }
+    }
+
+    public boolean isHit()
+    {
+        Actor rock = getOneIntersectingObject(Rock.class);  
+        if(rock != null)
+            return true;
+        return false;
     }
 
     public void hitDetection()  

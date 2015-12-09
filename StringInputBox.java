@@ -44,8 +44,8 @@ public class StringInputBox extends Actor
             {
                 BackDrop world = (BackDrop)getWorld();
                 world.recordScore(text);
-                world.removeObject(this);
                 world.restart();
+                world.removeObject(this);
             }
             catch(IOException ioe)
             {
