@@ -13,6 +13,7 @@ public class Rock extends Actor
     int originalWidth;
     int originalHeight;
     int count = 0;
+    boolean isHittable = false;
     public Rock()
     {
         img = new GreenfootImage(getImage());
@@ -30,6 +31,10 @@ public class Rock extends Actor
         }
         else
             count++;
+        if(((originalWidth/2) >= img.getWidth()) && ((originalHeight/2) >= img.getHeight()))
+        {
+            isHittable = true;
+        }
         if(((originalWidth/10) >= img.getWidth()) && ((originalHeight/10) >= img.getHeight()))
         {
             BackDrop world = (BackDrop)getWorld();

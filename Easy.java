@@ -18,6 +18,9 @@ public class Easy extends BackDrop
 
     public void act()
     {
+        addVolumeButton();
+        displayScore();
+        displayLives();
         if(rockTimer >= (EASY+10))
         {
             if(spawnRock())
