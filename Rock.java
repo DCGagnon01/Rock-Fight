@@ -29,7 +29,7 @@ public class Rock extends Actor
         }
         else
             count++;
-        if(((originalWidth/10) == img.getWidth()) && ((originalHeight/10) == img.getHeight()))
+        if(((originalWidth/10) >= img.getWidth()) && ((originalHeight/10) >= img.getHeight()))
         {
             BackDrop world = (BackDrop)getWorld();
             world.removeObject(this);
