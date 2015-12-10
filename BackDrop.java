@@ -142,6 +142,8 @@ public class BackDrop extends World
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
             removeLife();
+            livesCounter.loseLife();
+            Scorer.minusScore();
             removeObject(figure);
         }
     }
