@@ -19,6 +19,7 @@ public class BackDrop extends World
     int lives;
     boolean stopSpawn = false;
     boolean isPlaying = false;
+    boolean play = true;
     boolean chosenDifficulty = false;
 
     String scoreNames[] = new String[11];
@@ -33,6 +34,12 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
+
+    GreenfootSound throwSound = new GreenfootSound("throw.wav");
+    GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
+    VolumeButton volumeButton = new VolumeButton();
+    Counter Scorer = new Counter();
+    Lives livesCounter = new Lives();
     public BackDrop()
     {    
         super(1080, 538, 1); 
@@ -41,7 +48,7 @@ public class BackDrop extends World
 
     public void act()
     {
-        Started();
+        startOnce();
     }
 
     public boolean spawnRock()
@@ -55,14 +62,28 @@ public class BackDrop extends World
         return false;
     }
 
+    public void throwSoundEffect()
+    {
+        throwSound.play();
+    }
+
+    public void startOnce()
+    {
+        if (play)
+        {
+            backgroundMusic.playLoop();
+            play = false;
+        }
+    }
+
     public void Started()
     {
-        if (!isPlaying)
-        {
-            GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
-            backgroundMusic.playLoop();
-            isPlaying = true;
-        }
+        backgroundMusic.playLoop();
+    }
+
+    public void Stop() 
+    {
+        backgroundMusic.pause();
     }
 
     public void spawnBlack(int difficulty)
@@ -252,4 +273,30 @@ public class BackDrop extends World
     {
         Greenfoot.setWorld(new BackDrop());
     }
+
+    public void addVolumeButton()
+    {
+        addObject(volumeButton, (getWidth()/8) - 90, (getHeight()/6) - 50);
+    }
+
+    public void displayLives()
+    {
+        addObject(livesCounter, 400, (getHeight()/6) - 50);
+    }
+
+    public void displayScore() 
+    {
+        addObject(Scorer, 200, (getHeight()/6) - 50);
+    }
+
+    public Counter getCounter() 
+    {
+        return Scorer;
+    }
+
+    public Lives getLives()
+    {
+        return livesCounter;
+    }
+
 }
