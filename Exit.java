@@ -1,11 +1,6 @@
-import greenfoot.*;
 
-/**
- * Write a description of class Exit here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+
 public class Exit extends MainMenu
 {
     /**
@@ -18,5 +13,5 @@ public class Exit extends MainMenu
         {
             System.exit(0);
         }
-    }    
-}
+    }
+}    

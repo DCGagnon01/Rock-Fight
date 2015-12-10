@@ -11,14 +11,22 @@ public class Hard extends BackDrop
     int counter = HARD;
     public Hard()
     {
+        lives = 5;
         removeMainMenu();
+        displayLives();
     }
-    
+
     public void act()
     {
+        spawnRock();
+        
+        displayScore();
+        updateLives(lives);
         if(counter == HARD)
         {
             counter = 0;
+            spawnBlackNormal(3);
+            spawnBlueHard();
         }
         else
         {
