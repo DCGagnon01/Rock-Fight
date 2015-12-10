@@ -58,7 +58,7 @@ public class Black extends Stick_Figure
     public void checkDespawn()
     {
         BackDrop world = (BackDrop)getWorld();
-        world.despawnStickFigure(this);
+        world.despawnBlack(this);
     }
 
     public void move()
