@@ -157,6 +157,8 @@ public class Black extends Stick_Figure
         {  
             world.removeObject(rock);
             world.score += score;
+            Counter scorer = world.getCounter(); 
+            scorer.addScore();
             world.removeObject(this);
         } 
     }
