@@ -33,9 +33,6 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
-    
-    ScoreCounter scoreCounter = new ScoreCounter();
-
     public BackDrop()
     {    
         super(1080, 538, 1); 
