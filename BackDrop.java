@@ -18,12 +18,11 @@ public class BackDrop extends World
     int score = 0;
     int lives;
     boolean stopSpawn = false;
-
-    String scoreNames[] = new String[10];
-    int scoreNumbers[] = new int[10];
-
     boolean isPlaying = false;
     boolean chosenDifficulty = false;
+
+    String scoreNames[] = new String[11];
+    int scoreNumbers[] = new int[11];
 
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
@@ -34,7 +33,6 @@ public class BackDrop extends World
     EasyButton easyButton = new EasyButton();
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
-
     public BackDrop()
     {    
         super(1080, 538, 1); 
@@ -44,14 +42,17 @@ public class BackDrop extends World
     public void act()
     {
         Started();
-        if(chosenDifficulty)
+    }
+
+    public boolean spawnRock()
+    {
+        MouseInfo mouse = Greenfoot.getMouseInfo();
+        if(mouse != null && Greenfoot.mouseClicked(null))
         {
-            if(Greenfoot.mouseClicked(this))
-            {
-                MouseInfo mouse = Greenfoot.getMouseInfo();
-                addObject(new Rock(), mouse.getX(), mouse.getY());
-            }
-        }
+            addObject(new Rock(), mouse.getX(), mouse.getY());
+            return true;
+        }   
+        return false;
     }
 
     public void Started()
@@ -115,12 +116,20 @@ public class BackDrop extends World
         }
     }
 
-    public void despawnStickFigure(Stick_Figure figure)
+    public void despawnBlack(Stick_Figure figure)
+    {
+        if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
+        {
+            removeLife();
+            removeObject(figure);
+        }
+    }
+
+    public void despawnBlue(Stick_Figure figure)
     {
         if((figure.getX() >= getWidth()-5) || (figure.getX() <= 5))
         {
             removeObject(figure);
-            removeLife();
         }
     }
 
@@ -149,19 +158,6 @@ public class BackDrop extends World
         addObject(hardButton, getWidth()/2, (getHeight()/4)*3);
     }
 
-    public void recordScore(String name) throws IOException
-    {
-        File folder = new File("C:\\Rock-Fight");
-        folder.mkdir();
-
-        File file = new File("C:\\Rock-Fight\\highScores.txt");
-        FileWriter fw = new FileWriter(file, true);
-        PrintWriter output = new PrintWriter(fw);
-        output.println(name + " " + score);
-        output.close();
-        fw.close();
-    }
-
     public void removeLife()
     {
         lives--;
@@ -171,6 +167,23 @@ public class BackDrop extends World
             removeObjects(getObjects(Stick_Figure.class));
             addObject(new StringInputBox(), getWidth()/2, getHeight()/2);
         }
+    }
+
+    public void recordScore(String name) throws IOException
+    {
+        File folder = new File("C:\\Rock-Fight");
+        folder.mkdir();
+
+        File file = new File("C:\\Rock-Fight\\highScores.txt");
+        FileWriter fw = new FileWriter(file);
+        PrintWriter output = new PrintWriter(fw);
+        findScorePosition(name, score);
+        for(int i=0; i<10; i++)
+        {
+            output.println(scoreNames[i] + " " + scoreNumbers[i]);
+        }
+        output.close();
+        fw.close();
     }
 
     public void readScores()
@@ -185,11 +198,58 @@ public class BackDrop extends World
                     scoreNames[i] = inputFile.next();
                 if(inputFile.hasNextInt())
                     scoreNumbers[i] = inputFile.nextInt();
+                System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
             }
         }
         catch(IOException ioe)
         {
+            for(int i=0; i<11; i++)
+            {
+                scoreNames[i] = "-----";
+                scoreNumbers[i] = 0;
+                System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
+            }
+            try
+            {
+                recordScore("");
+            }
+            catch(IOException ioe2)
+            {
 
+            }
         }
+    }
+
+    public void findScorePosition(String name, int score)
+    {
+        scoreNames[10] = name;
+        scoreNumbers[10] = score;
+        for(int i=0; i<11; i++)
+        {
+            for(int j=0; j<11; j++)
+            {
+                if(scoreNumbers[i] > scoreNumbers[j])
+                {
+                    int tempInt = scoreNumbers[i];
+                    String tempString = scoreNames[i];
+
+                    scoreNames[i] = scoreNames[j];
+                    scoreNames[j] = tempString;
+
+                    scoreNumbers[i] = scoreNumbers[j];
+                    scoreNumbers[j] = tempInt;
+                }
+            }
+        }
+    }
+
+    public void changeScore(int i)
+    {
+        score = i;
+    }
+
+    public void restart()
+    {
+        Greenfoot.setWorld(new BackDrop());
     }
 }

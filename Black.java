@@ -12,7 +12,6 @@ public class Black extends Stick_Figure
     int score;
     int frame = 0;
     boolean isLeft;
-    boolean isHit = false;
     public Black(int direction, int difficulty)
     {
         if (difficulty == 1)
@@ -27,7 +26,7 @@ public class Black extends Stick_Figure
         {
             score = 150;
         }
-        
+
         GreenfootImage img = new GreenfootImage("Run1.png");
         if(direction < 0)
         {
@@ -46,18 +45,20 @@ public class Black extends Stick_Figure
     {
         animation();
         move();
-        if(isHit == true)
+        if(isHit())
         {
-            
+            hitDetection();
         }
         else
+        {
             checkDespawn();
+        }
     }
 
     public void checkDespawn()
     {
         BackDrop world = (BackDrop)getWorld();
-        world.despawnStickFigure(this);
+        world.despawnBlack(this);
     }
 
     public void move()
@@ -95,14 +96,24 @@ public class Black extends Stick_Figure
         }
     }
 
+    public boolean isHit()
+    {
+        Actor rock = getOneIntersectingObject(Rock.class);  
+        if(rock != null)
+            return true;
+        return false;
+    }
+
     public void hitDetection()  
     {
-        Actor b = getOneIntersectingObject(Rock.class);  
+        Actor rock = getOneIntersectingObject(Rock.class);  
+        BackDrop world = (BackDrop)getWorld();
 
-        if(b != null)  
+        if(rock != null)  
         {  
-            getWorld().removeObject(b);   
-            getWorld().removeObject(this);
+            world.removeObject(rock);
+            world.score += score;
+            world.removeObject(this);
         } 
     }
 }

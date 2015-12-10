@@ -6,7 +6,7 @@ import java.awt.Color;
 public class StringInputBox extends Actor
 {
     static final int MAX_INPUT_LENGTH = 20;
-    String text = "Enter a String";
+    String text = "Enter your name";
 
     public StringInputBox()
     {
@@ -44,6 +44,7 @@ public class StringInputBox extends Actor
             {
                 BackDrop world = (BackDrop)getWorld();
                 world.recordScore(text);
+                world.restart();
                 world.removeObject(this);
             }
             catch(IOException ioe)

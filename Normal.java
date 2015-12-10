@@ -11,6 +11,7 @@ public class Normal extends BackDrop
 
     public void act()
     {
+        spawnRock();
         if(counter == NORMAL)
         {
             counter = 0;
