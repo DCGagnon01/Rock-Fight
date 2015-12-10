@@ -13,15 +13,15 @@ public class Hard extends BackDrop
     {
         lives = 5;
         removeMainMenu();
+        displayLives();
     }
 
     public void act()
     {
         spawnRock();
         
-        addVolumeButton();
         displayScore();
-        displayLives();
+        updateLives(lives);
         if(counter == HARD)
         {
             counter = 0;

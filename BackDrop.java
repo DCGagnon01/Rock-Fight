@@ -37,12 +37,18 @@ public class BackDrop extends World
 
     GreenfootSound throwSound = new GreenfootSound("throw.wav");
     GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
-    VolumeButton volumeButton = new VolumeButton();
     Counter Scorer = new Counter();
     Lives livesCounter = new Lives();
     public BackDrop()
     {    
         super(1080, 538, 1); 
+        addMainMenu();
+    }
+
+    public BackDrop(int i)
+    {
+        super(1080, 538, 1); 
+        play = false;
         addMainMenu();
     }
 
@@ -78,12 +84,12 @@ public class BackDrop extends World
 
     public void Started()
     {
-        backgroundMusic.playLoop();
+        backgroundMusic.setVolume(100);
     }
 
     public void Stop() 
     {
-        backgroundMusic.pause();
+        backgroundMusic.setVolume(0);
     }
 
     public void spawnBlack(int difficulty)
@@ -218,7 +224,15 @@ public class BackDrop extends World
             for(int i=0; i<10; i++)
             {
                 if(inputFile.hasNext())
+                {
                     scoreNames[i] = inputFile.next();
+                    if(scoreNames[i] == "null" || scoreNames[i] == "0" || scoreNames[i] == null)
+                    {
+                        scoreNames[i] = "empty";
+                    }
+                }
+                else
+                    scoreNames[i] = "empty";
                 if(inputFile.hasNextInt())
                     scoreNumbers[i] = inputFile.nextInt();
                 System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
@@ -228,7 +242,7 @@ public class BackDrop extends World
         {
             for(int i=0; i<11; i++)
             {
-                scoreNames[i] = "-----";
+                scoreNames[i] = "empty";
                 scoreNumbers[i] = 0;
                 System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
             }
@@ -273,22 +287,22 @@ public class BackDrop extends World
 
     public void restart()
     {
-        Greenfoot.setWorld(new BackDrop());
-    }
-
-    public void addVolumeButton()
-    {
-        addObject(volumeButton, (getWidth()/8) - 90, (getHeight()/6) - 50);
+        Greenfoot.setWorld(new BackDrop(1));
     }
 
     public void displayLives()
     {
-        addObject(livesCounter, 400, (getHeight()/6) - 50);
+        addObject(livesCounter, 200, (getHeight()/6) - 50);
+    }
+
+    public void updateLives(int lives)
+    {
+        livesCounter.updateLives(lives);
     }
 
     public void displayScore() 
     {
-        addObject(Scorer, 200, (getHeight()/6) - 50);
+        addObject(Scorer, (getWidth()/8) - 90, (getHeight()/6) - 50);
     }
 
     public Counter getCounter() 

@@ -14,13 +14,13 @@ public class Easy extends BackDrop
     {
         lives = 3;
         removeMainMenu();
+        displayLives();
     }
 
     public void act()
     {
-        addVolumeButton();
         displayScore();
-        displayLives();
+        updateLives(lives);
         if(rockTimer >= (EASY+10))
         {
             if(spawnRock())

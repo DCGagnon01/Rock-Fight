@@ -19,12 +19,12 @@ public class Sound extends MainMenu
             if (now) 
             {
                 Stop();
-                now = false;
+                now = !now;
             }
             else 
             {
                 Started();
-                now = true;
+                now = !now;
             }
         }
     }    
