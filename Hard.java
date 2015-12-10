@@ -18,6 +18,10 @@ public class Hard extends BackDrop
     public void act()
     {
         spawnRock();
+        
+        addVolumeButton();
+        displayScore();
+        displayLives();
         if(counter == HARD)
         {
             counter = 0;

@@ -12,6 +12,10 @@ public class Normal extends BackDrop
     public void act()
     {
         spawnRock();
+
+        addVolumeButton();
+        displayScore();
+        displayLives();
         if(counter == NORMAL)
         {
             counter = 0;

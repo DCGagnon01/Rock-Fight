@@ -30,6 +30,7 @@ public class VolumeButton extends MainMenu
             setImage(mute);
         }
         if(Greenfoot.mouseClicked(this)) 
+        {
             if (now) 
             {
                 clickSoundEffect();
@@ -41,6 +42,7 @@ public class VolumeButton extends MainMenu
                 clickSoundEffect();
                 Started();
                 now = true;
+            }
         }
         //        {
         //         if (isClicked) 
@@ -56,7 +58,5 @@ public class VolumeButton extends MainMenu
 }
 //}    
 
-        
 
-    
 //}

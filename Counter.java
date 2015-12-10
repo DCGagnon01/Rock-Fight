@@ -13,29 +13,29 @@ public class Counter extends Actor
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     int score = 0;
-     
+
     public void act() 
     {
         setImage(new GreenfootImage("Score : " + score, 24, Color.GREEN, Color.BLACK));
     }    
-    
+
     public void addScore()
     {
         score = score + 50;
     }
+
     public void minusScore()
     {
         score = score - 50;
     }
-        public void addScoreNormal()
+
+    public void addScoreNormal()
     {
         score = score + 100;
     }
-        public void addScoreHard()
+
+    public void addScoreHard()
     {
         score = score + 150;
     }
-    
-    
-    
 }

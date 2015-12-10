@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Thu Dec 10 10:03:25 EST 2015
+#Thu Dec 10 10:18:58 EST 2015
 target16.name=HardButton
 class.Black.superclass=Stick_Figure
 target2.name=NormalButton
@@ -20,7 +20,7 @@ dependency8.to=BackDrop
 target20.naviview.expanded=true
 target14.type=ClassTarget
 target19.naviview.expanded=true
-simulation.speed=30
+simulation.speed=50
 class.Exit.superclass=MainMenu
 dependency25.type=UsesDependency
 dependency22.from=BackDrop
