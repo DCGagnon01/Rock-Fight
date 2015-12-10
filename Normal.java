@@ -7,15 +7,15 @@ public class Normal extends BackDrop
     {
         lives = 4;
         removeMainMenu();
+        displayLives();
     }
 
     public void act()
     {
         spawnRock();
 
-        addVolumeButton();
         displayScore();
-        displayLives();
+        updateLives(lives);
         if(counter == NORMAL)
         {
             counter = 0;

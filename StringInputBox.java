@@ -33,8 +33,6 @@ public class StringInputBox extends Actor
             return;
         if ("backspace".equals(key) && text.length() > 0) 
             text = text.substring(0, text.length() - 1);
-        if ("space".equals(key)) 
-            key = " ";
         if (key.length() == 1 && text.length() < MAX_INPUT_LENGTH) 
             text += key;
         updateImage();
@@ -43,7 +41,8 @@ public class StringInputBox extends Actor
             try
             {
                 BackDrop world = (BackDrop)getWorld();
-                world.recordScore(text);
+                if(world.score > 0)
+                    world.recordScore(text);
                 world.restart();
                 world.removeObject(this);
             }

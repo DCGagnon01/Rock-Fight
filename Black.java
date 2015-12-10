@@ -14,17 +14,9 @@ public class Black extends Stick_Figure
     boolean isLeft;
     public Black(int direction, int difficulty)
     {
-        if (difficulty == 1)
+        if (difficulty != 0)
         {
             score = 50;
-        }
-        else if (difficulty == 2)
-        {
-            score = 100;
-        }
-        else
-        {
-            score = 150;
         }
 
         GreenfootImage img = new GreenfootImage("Run1.png");
@@ -152,7 +144,7 @@ public class Black extends Stick_Figure
     {
         Rock rock = (Rock)getOneIntersectingObject(Rock.class);  
         BackDrop world = (BackDrop)getWorld();
-        
+
         if(rock != null && rock.isHittable)  
         {  
             world.removeObject(rock);
