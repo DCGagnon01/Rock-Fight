@@ -141,13 +141,18 @@ public class Blue extends Stick_Figure
 
         if(rock != null && rock.isHittable)  
         {  
+            Greenfoot.playSound("smack.mp3");
             world.removeObject(rock);
             Counter scorer = world.getCounter(); 
             scorer.minusScore();
+            world.score -= 50;
             Lives lifeCounter = world.getLives();
-            lifeCounter.loseLife();
+            world.removeLife();
+            lifeCounter.updateLives(world.lives);
             world.removeObject(this);
         } 
     }
 }
+
+
 

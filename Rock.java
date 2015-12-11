@@ -35,7 +35,7 @@ public class Rock extends Actor
         {
             isHittable = true;
         }
-        if(((originalWidth/10) >= img.getWidth()) && ((originalHeight/10) >= img.getHeight()))
+        if(((originalWidth/10) >= img.getWidth()))
         {
             BackDrop world = (BackDrop)getWorld();
             world.removeObject(this);

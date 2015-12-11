@@ -28,14 +28,4 @@ public class Counter extends Actor
     {
         score = score - 50;
     }
-
-    public void addScoreNormal()
-    {
-        score = score + 100;
-    }
-
-    public void addScoreHard()
-    {
-        score = score + 150;
-    }
 }
