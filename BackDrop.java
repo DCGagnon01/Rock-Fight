@@ -25,9 +25,11 @@ public class BackDrop extends World
     String scoreNames[] = new String[11];
     int scoreNumbers[] = new int[11];
 
+    File file = new File("C:\\Rock-Fight\\highScores.txt");
+
     StartGame startButton = new StartGame();
     Sound soundButton = new Sound();
-    HighScore scoresButton = new HighScore();
+    HighScore scoresButton = new HighScore(file);
     Exit exitButton = new Exit();
     Title titlePicture = new Title();
 
@@ -35,7 +37,6 @@ public class BackDrop extends World
     NormalButton normalButton = new NormalButton();
     HardButton hardButton = new HardButton();
 
-    GreenfootSound throwSound = new GreenfootSound("throw.wav");
     GreenfootSound backgroundMusic = new GreenfootSound("background.wav");
     Counter Scorer = new Counter();
     Lives livesCounter = new Lives();
@@ -50,6 +51,7 @@ public class BackDrop extends World
         super(1080, 538, 1); 
         play = false;
         addMainMenu();
+        score = 0;
     }
 
     public void act()
@@ -62,15 +64,11 @@ public class BackDrop extends World
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(mouse != null && Greenfoot.mouseClicked(null))
         {
+            // Greenfoot.playSound("throw.wav");
             addObject(new Rock(), mouse.getX(), mouse.getY());
             return true;
         }   
         return false;
-    }
-
-    public void throwSoundEffect()
-    {
-        throwSound.play();
     }
 
     public void startOnce()
@@ -194,76 +192,96 @@ public class BackDrop extends World
         {
             stopSpawn = true;
             removeObjects(getObjects(Stick_Figure.class));
-            addObject(new StringInputBox(), getWidth()/2, getHeight()/2);
+            addObject(new StringInputBox(score), getWidth()/2, getHeight()/2);
         }
     }
 
-    public void recordScore(String name) throws IOException
+    public void recordScores(String name)
     {
-        File folder = new File("C:\\Rock-Fight");
-        folder.mkdir();
-
-        File file = new File("C:\\Rock-Fight\\highScores.txt");
-        FileWriter fw = new FileWriter(file);
-        PrintWriter output = new PrintWriter(fw);
-        findScorePosition(name, score);
-        for(int i=0; i<10; i++)
+        for(int i=0; i<11; i++)
         {
-            output.println(scoreNames[i] + " " + scoreNumbers[i]);
+            scoreNames[i] = "----";
+            scoreNumbers[i] = 0;
         }
-        output.close();
-        fw.close();
+
+        scoreNames[10] = name;
+        scoreNumbers[10] = Scorer.score;
+
+        if(!file.exists())
+        {
+            makeBlankDocument(file);
+        }
+
+        readDocument(file);
+
+        findScorePosition();
+
+        try
+        {
+            FileWriter fw = new FileWriter(file);
+            PrintWriter output = new PrintWriter(fw);
+
+            for(int i=0; i<10; i++)
+            {
+                output.println(scoreNames[i]);
+                output.println(scoreNumbers[i]);
+            }
+
+            output.close();
+            fw.close();
+        }
+        catch(IOException ioe)
+        {
+            System.out.println("Error in recordScores: could not write to document");
+        }
     }
 
-    public void readScores()
+    public void readDocument(File file)
     {
         try
         {
-            File file = new File("C:\\Rock-Fight\\highScores.txt");
-            Scanner inputFile = new Scanner(file);
+            Scanner sc = new Scanner(file);
             for(int i=0; i<10; i++)
             {
-                if(inputFile.hasNext())
-                {
-                    scoreNames[i] = inputFile.next();
-                    if(scoreNames[i] == "null" || scoreNames[i] == "0" || scoreNames[i] == null)
-                    {
-                        scoreNames[i] = "empty";
-                    }
-                }
-                else
-                    scoreNames[i] = "empty";
-                if(inputFile.hasNextInt())
-                    scoreNumbers[i] = inputFile.nextInt();
-                System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
+                scoreNames[i] = sc.nextLine();
+                scoreNumbers[i] = Integer.parseInt(sc.nextLine());
+                System.out.println((i+1) + ".  " + scoreNames[i] + " " + scoreNumbers[i]);
             }
         }
         catch(IOException ioe)
         {
-            for(int i=0; i<11; i++)
-            {
-                scoreNames[i] = "empty";
-                scoreNumbers[i] = 0;
-                System.out.println((i+1) + ".   " + scoreNames[i] + " " + scoreNumbers[i]);
-            }
-            try
-            {
-                recordScore("");
-            }
-            catch(IOException ioe2)
-            {
-
-            }
+            makeBlankDocument(file);
+            readDocument(file);
         }
     }
 
-    public void findScorePosition(String name, int score)
+    public void makeBlankDocument(File file)
     {
-        scoreNames[10] = name;
-        scoreNumbers[10] = score;
+        try
+        {
+            FileWriter fw = new FileWriter(file);
+            PrintWriter output = new PrintWriter(fw);
+
+            for(int i=0; i<10; i++)
+            {
+                output.println("----");
+                output.println(0);
+            }
+
+            output.close();
+            fw.close();
+        }
+        catch(IOException ioe)
+        {
+            System.out.println("Error in makeBlankDocument: could not make a blank file");
+        }
+    }
+
+    public void findScorePosition()
+    {
         for(int i=0; i<11; i++)
         {
-            for(int j=0; j<11; j++)
+            for(int j=0; j<i; j++)
             {
                 if(scoreNumbers[i] > scoreNumbers[j])
                 {

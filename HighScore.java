@@ -11,22 +11,18 @@ import greenfoot.*;
  */
 public class HighScore extends MainMenu
 {
-    /**
-     * Act - do whatever the HighScore wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
+    File file;
+    public HighScore(File file)
+    {
+        this.file = file;
+    }
+    
     public void act()
     {
         if(Greenfoot.mouseClicked(this))
         {
             BackDrop world = (BackDrop)getWorld();
-            world.readScores();
+            world.readDocument(file);
         }
     }    
-
-    public void showScores() throws IOException
-    {
-        BackDrop world = (BackDrop)getWorld();
-        world.readScores();
-    }
 }

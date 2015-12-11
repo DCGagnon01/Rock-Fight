@@ -7,11 +7,12 @@ public class StringInputBox extends Actor
 {
     static final int MAX_INPUT_LENGTH = 20;
     String text = "Enter your name";
-
-    public StringInputBox()
+    int score;
+    public StringInputBox(int score)
     {
         updateImage();
         text = "";
+        this.score = score;
     }
 
     private void updateImage()
@@ -38,18 +39,11 @@ public class StringInputBox extends Actor
         updateImage();
         if ("enter".equals(key) && text.length() > 0)
         {
-            try
-            {
-                BackDrop world = (BackDrop)getWorld();
-                if(world.score > 0)
-                    world.recordScore(text);
-                world.restart();
-                world.removeObject(this);
-            }
-            catch(IOException ioe)
-            {
-
-            }
+            BackDrop world = (BackDrop)getWorld();
+            if(score > 0)
+                world.recordScores(text);
+            world.restart();
+            world.removeObject(this);
         }
     }
 }

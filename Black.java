@@ -9,16 +9,10 @@ public class Black extends Stick_Figure
 {
     final int TIMEMAX = 4;
     int time = TIMEMAX;
-    int score;
     int frame = 0;
     boolean isLeft;
     public Black(int direction, int difficulty)
     {
-        if (difficulty != 0)
-        {
-            score = 50;
-        }
-
         GreenfootImage img = new GreenfootImage("Run1.png");
         if(direction < 0)
         {
@@ -147,8 +141,9 @@ public class Black extends Stick_Figure
 
         if(rock != null && rock.isHittable)  
         {  
+            Greenfoot.playSound("smack.mp3");
             world.removeObject(rock);
-            world.score += score;
+            world.score += 50;
             Counter scorer = world.getCounter(); 
             scorer.addScore();
             world.removeObject(this);
